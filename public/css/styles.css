@@ -1,0 +1,250 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+    text-decoration: none;
+  }
+  html { height: 101%; } /* always display scrollbars */
+  body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; width: auto;}
+
+  header, footer, section {width: 100%;}
+
+  #menu-toggle{
+    opacity: 0;
+  }
+
+header{
+  background-color: #f0993570;
+}
+header a{
+  color: black;
+  transition-duration: .8s;
+}
+header a:hover {
+  color: white;
+  border: rgb(0, 0, 0);
+  border-style: 2px solid;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #A36014;
+}
+
+nav{
+  margin-bottom: 50px;
+}
+
+.menubox {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  margin-right: 50px;
+  font-size: 24px;
+}
+
+ul li {
+  margin-right: 20px;
+}
+
+.nav {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.logo {
+  margin-left: auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.to__do {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;  
+}
+
+.to__do:focus {
+  outline: none;
+  box-shadow: 2px 2px 7px #6a1df046;
+}
+
+.to-do-form {
+align-items: center;
+}
+
+.to-do-but {
+  width: 120px;
+  height: 43px;
+  font-size: 18px;
+  margin: 20px auto;
+  display: block;
+  border: none;
+  background-color: #f8f8f8;
+  transition-duration: 1s;
+}
+
+.to-do-but:hover {
+  transform: scale(1.3, 1.2);
+  background-color: #ccc;
+}
+
+@media (min-width: 1200.01px){
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 760px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 770px){
+  .container {
+    width: 570px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px){
+  .container {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .menu-btn{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+   
+  .menu-btn > span,
+  .menu-btn > span::before,
+  .menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+  }
+  .menu-btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu-btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  .menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu-item:hover {
+    background-color: #CFD8DC;
+  }
+   
+  #menu-toggle:checked ~ .menu-btn > span{
+    transform: rotate(45deg);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  .menubox{
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: -100%;
+    width: 300px;
+    list-style: none;
+    transition-duration: .25s;
+    padding: 0;
+    list-style: none;
+    margin-top: 0;
+    margin-left: 50px;
+    font-size: 24px;
+  }
+
+  .menubox li {
+    margin-top: 10px;
+  }
+
+  #menu-toggle:checked ~ .menubox{
+    visibility: visible;
+    top: 0;
+  }
+
+}
+
+
+@media screen and (prefers-color-scheme: dark){
+  body {background-color: #31210fa1;}
+  header{background-color: #A36014;}
+  header a{color: rgb(212, 212, 212);}
+  header a:hover {
+    color: rgb(230, 230, 230);
+    border: rgb(0, 0, 0);
+    background-color: #f0993573;
+  }
+  .to__do {
+    color: white;
+    background-color: #292b2c;
+  }
+  .to__do:focus {
+    box-shadow: 2px 2px 7px #230657;
+  }  
+  .to-do-but {
+    color:aliceblue;
+    background-color: #5a5a5a;
+  }      
+  .to-do-but:hover {
+    background-color: rgb(119, 119, 119);
+  }
+  .menu-btn > span::after {
+    background-color: #d4d4d4;
+  }
+  .menu-btn > span::before {
+    background-color: #d4d4d4;
+  }
+  .menu-btn > span {
+    background-color: #d4d4d4;
+  }
+  .menu-item {
+    color: rgb(199, 199, 199);
+  }
+  .menu-item:hover {
+    background-color: #292b2c;
+  }
+}
