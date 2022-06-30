@@ -8,17 +8,21 @@ router.get('/', (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    res.render('pages/login', {title: 'authorization page'})
+    res.render('pages/login', { title: 'authorization page' })
+})
+
+router.get('/about', (req, res) => { 
+    res.render('pages/about', { title: 'about page' }) 
 })
 
 router.post('/', (req, res) => {
     if (!req.body) return res.sendStatus(400)
     res.send(console.log(req.body))
-    res.render('pages/index', {title: 'main page'})
+    res.render('pages/index', { title: 'main page' })
 })
 
 router.get('/reg', (req, res) => {
-    res.render('pages/registration', {title: 'registration'})
+    res.render('pages/registration', { title: 'registration' })
 })
 
 router.post('/reg', controller.registration)

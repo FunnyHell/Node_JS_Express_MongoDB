@@ -17,6 +17,13 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img {
     opacity: 0;
   }
 
+p {
+  font-family: Tahoma;
+  text-indent: 1.5em;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
 header{
   background-color: #f0993570;
 }
