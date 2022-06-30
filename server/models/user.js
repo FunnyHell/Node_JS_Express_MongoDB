@@ -4,11 +4,13 @@ const mongoose = require('mongoose'),
 
 const Users = new Schema({
     name: {
-        type: String,
-        required: true
+        type: String, unique: true, required: true
     },
     email: {
-        type: String,
+        type: String, unique: true, required: true
+    },
+    password: {
+        type: String, required: true
     }
 }, { timestamps: true })
 

@@ -81,7 +81,19 @@ ul li {
 }
 
 .to-do-form {
-align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.to-do-input {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  margin: 12px auto;
 }
 
 .to-do-but {

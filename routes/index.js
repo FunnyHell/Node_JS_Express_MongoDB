@@ -1,10 +1,14 @@
 const express = require('express'),
     router = express.Router(),
     fs = require('fs'),
-    User = require('../server/models/user')
+    controller = require('../controllers/authController')
 
 router.get('/', (req, res) => {
     res.render('pages/index', { title: 'main page' })
+})
+
+router.get('/login', (req, res) => {
+    res.render('pages/login', {title: 'authorization page'})
 })
 
 router.post('/', (req, res) => {
@@ -17,17 +21,7 @@ router.get('/reg', (req, res) => {
     res.render('pages/registration', {title: 'registration'})
 })
 
-router.post('/reg', (req, res) =>{
-    if(!req.body) return res.sendStatus(400)
-    const {name, email} = req.body
-    const Users = new User({name, email})
-    Users
-        .save()
-        .then((result) => res.send(result))
-        .catch((error) => {
-            console.log(error)
-        })
-})
+router.post('/reg', controller.registration)
 
 
 
