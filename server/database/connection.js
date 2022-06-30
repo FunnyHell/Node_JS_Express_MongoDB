@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const db = 'mongodb+srv://FunnyHell:passchb@learning.13f2a.mongodb.net/To-Do-Db?retryWrites=true&w=majority'
+const db = process.env.server
 
 const connectDB = async () => {
     try{

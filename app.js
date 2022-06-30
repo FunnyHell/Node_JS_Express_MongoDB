@@ -1,9 +1,11 @@
 const express = require('express'),
-    path = require('path')
+    path = require('path'),
+    dotenv = require('dotenv');
+const app = express()
 
-const app = express(),
-    port = 8000
+dotenv.config( { path : 'config.env'} )
 
+const port = process.env.PORT
 const connectDB = require('./server/database/connection');
 connectDB();
 
