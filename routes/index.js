@@ -22,7 +22,7 @@ router.get('/reg', (req, res) => {
 })
 
 router.post('/reg', controller.registration)
-
+router.post('/login', controller.login)
 
 
 module.exports = router
