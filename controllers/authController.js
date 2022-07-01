@@ -21,7 +21,7 @@ class authController {
                 return res.status(400).json({message: `Введен неверный пароль`})
             }
             const token = generateAccessToken(user._id)
-            return res.json({token})
+            res.json(token)
         } catch (e){
             console.log(e)
             res.status(400).json({message: 'Authorization error'})
@@ -50,7 +50,7 @@ class authController {
     }
 
 
-    async listViewer(req, res){
+    async changeInformation(req, res){
         try{
 
         } catch (e){

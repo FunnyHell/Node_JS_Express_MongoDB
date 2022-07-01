@@ -27,11 +27,11 @@ p {
 header{
   background-color: #f0993570;
 }
-header a{
+header li a{
   color: black;
   transition-duration: .8s;
 }
-header a:hover {
+header li a:hover {
   color: white;
   border: rgb(0, 0, 0);
   border-style: 2px solid;
@@ -54,6 +54,10 @@ nav{
 
 ul li {
   margin-right: 20px;
+}
+
+.profile {
+  margin-left: auto;
 }
 
 .nav {

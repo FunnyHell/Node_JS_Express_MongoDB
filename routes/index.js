@@ -2,7 +2,7 @@ const express = require('express'),
     router = express.Router(),
     fs = require('fs'),
     controller = require('../controllers/authController')
-
+const authMiddleware = require('../middleware/authMiddleware')
 router.get('/', (req, res) => {
     res.render('pages/index', { title: 'main page' })
 })
@@ -11,9 +11,15 @@ router.get('/login', (req, res) => {
     res.render('pages/login', { title: 'authorization page' })
 })
 
-router.get('/about', (req, res) => { 
-    res.render('pages/about', { title: 'about page' }) 
+router.get('/about', (req, res) => {
+    res.render('pages/about', { title: 'about page' })
 })
+
+router.get('/profile', (req, res) => {
+    res.render('pages/profile', authMiddleware, { title: 'profile page' })
+})
+
+
 
 router.post('/', (req, res) => {
     if (!req.body) return res.sendStatus(400)
