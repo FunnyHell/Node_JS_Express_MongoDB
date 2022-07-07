@@ -235,8 +235,8 @@ ul li {
 @media screen and (prefers-color-scheme: dark){
   body {background-color: #31210fa1;}
   header{background-color: #A36014;}
-  header a{color: rgb(212, 212, 212);}
-  header a:hover {
+  header li a{color: rgb(212, 212, 212);}
+  header li a:hover {
     color: rgb(230, 230, 230);
     border: rgb(0, 0, 0);
     background-color: #f0993573;

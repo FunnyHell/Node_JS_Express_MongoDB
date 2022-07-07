@@ -2,6 +2,7 @@ const express = require('express'),
     path = require('path'),
     dotenv = require('dotenv');
 const app = express()
+const cookieParser = require('cookie-parser')
 
 dotenv.config( { path : 'config.env'} )
 
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser(process.env.secret))
 
 app.use('/', require('./routes'))
 

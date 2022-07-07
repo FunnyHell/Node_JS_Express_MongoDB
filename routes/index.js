@@ -3,6 +3,9 @@ const express = require('express'),
     fs = require('fs'),
     controller = require('../controllers/authController')
 const authMiddleware = require('../middleware/authMiddleware')
+
+router.post('/reg', controller.registration)
+
 router.get('/', (req, res) => {
     res.render('pages/index', { title: 'main page' })
 })
@@ -15,8 +18,10 @@ router.get('/about', (req, res) => {
     res.render('pages/about', { title: 'about page' })
 })
 
-router.get('/profile', (req, res) => {
-    res.render('pages/profile', authMiddleware, { title: 'profile page' })
+router.get('/profile', (req, res, next) => {
+    const token = req.cookies.token
+    authMiddleware(req, res, token, next)
+    res.render('pages/profile', {title: 'profile page'})
 })
 
 
@@ -31,7 +36,6 @@ router.get('/reg', (req, res) => {
     res.render('pages/registration', { title: 'registration' })
 })
 
-router.post('/reg', controller.registration)
 router.post('/login', controller.login)
 
 
